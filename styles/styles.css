@@ -1,0 +1,82 @@
+html{
+	width: 100%; /* ancho */
+	height: 100%;  /* altura */
+}
+body{
+	width: 100%;
+	height: 100%;
+	margin: 2px; /* margen */
+	padding: 0px; /* Espaciado */
+	border: 2px;
+	font-family: Verdana, Arial, Helvetica, Sans-serif;
+	background: #D4E6F4;
+	font-size: 13px;
+	line-height: 15px;
+}
+img{
+	border: none;	
+}
+table,tr,td{
+	border-collapse: collapse;
+	vertical-align: top;
+	font-size: 13px;
+	line-height: 15px; 
+}
+a{ 
+	color: #7B1704 ;
+}
+h2{
+	color: #7B5804;
+}
+#cabeza{
+	height: 70px;
+	margin: 2px;
+	padding: 2px;
+	text-align: left;
+	background: #13708F;
+	color: #8DC6D9;
+}
+#cabeza h1{
+	padding: 1em;
+	margin: 1px;
+}
+#cuerpo{
+	margin: 1px;
+	padding: 1px;
+	height: 600px;
+	width: 100%;
+	background: #F6DC9C;
+}
+#estructura {
+	height: 600px;
+	width: 100%;
+}
+#pie{
+	height: 2em;
+	margin: 2px;
+	padding: 2em;
+	text-align: center;
+	background: #13708F;
+	color: #8DC6D9;
+}
+#menu{
+	width: 150px;
+	padding: 1em 2em;
+	color: #D4E6F4;
+	background: #E6A917; 
+}
+#menu a{
+	color: #D4E6F4;
+	text-decoration: none;
+}
+ul.cursos {
+	padding-left: 0px;
+	list-style: square;
+}
+ul.capitulos {
+	padding-left: 2em;
+	list-style: square;
+}
+.selected{
+	font-weight: bold;
+} 
