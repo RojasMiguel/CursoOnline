@@ -28,13 +28,21 @@
 						 	$cursos = obtener_curso();   
 
 							while($curso = mysql_fetch_array($cursos)){
-								echo "<li> <a href=\"content.php?curso=" . urlencode($curso["id"]) ."\">" . $curso['nombre'] . "</a></li><ul class='capitulos'>";
+								echo "<li";
+								if($curso["id"] == $curso_selec){
+									echo " class=\"selected\"";
+								}	
+								echo "> <a href=\"content.php?curso=" . urlencode($curso["id"]) ."\">" . $curso['nombre'] . "</a></li><ul class='capitulos'>";
 
 								$capitulos = obtener_capitulo($curso["id"]);
 
 								while($capitulo = mysql_fetch_array($capitulos)){
 									
-									echo"<li> <a href=\"content.php?capitulo=" . urlencode($capitulo["id"]) . "\">" . $capitulo["nombre"] . "</a></li>";								
+									echo"<li";
+									if($capitulo["id"] == $capitulo_selec){
+										echo" class=\"selected\"";
+									}	
+									echo "> <a href=\"content.php?capitulo=" . urlencode($capitulo["id"]) . "\">" . $capitulo["nombre"] . "</a></li>";								
 								}
 								echo "</ul>";								
 							}
