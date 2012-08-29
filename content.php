@@ -24,13 +24,13 @@
 						 	$cursos = obtener_curso();   
 
 							while($curso = mysql_fetch_array($cursos)){
-								echo "<li>{$curso['nombre']}</li><ul class='capitulos'>";
+								echo "<li> <a href=\"content.php?curso=" . urlencode($curso["id"]) ."\">" . $curso['nombre'] . "</a></li><ul class='capitulos'>";
 
 								$capitulos = obtener_capitulo($curso["id"]);
 
 								while($capitulo = mysql_fetch_array($capitulos)){
 									
-									echo"<li>". $capitulos["nombre"]."</li>";								
+									echo"<li> <a href=\"content.php?capitulo=" . urlencode($capitulo["id"]) . "\">" . $capitulo["nombre"] . "</a></li>";								
 								}
 								echo "</ul>";								
 							}
