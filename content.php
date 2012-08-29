@@ -1,16 +1,20 @@
 <?php require_once("includes/conexion.php");?>
 <?php require_once("includes/functions.php");?>
 <?php
-	/*
-	if(isset($_GET['curso'])){
-		$curso_selec = $_GET['curso'];
+	
+	if(isset($_GET["curso"])){
+		$curso_selec = $_GET["curso"];
 		$capitulo_selec = "";
 		//$cursoreg = obtener_curso_por_id($curso_selec);
-	}elseif (isset($_GET['capitulo'])) {
-		$capitulo_selec = $_GET['capitulo'];
+	}elseif(isset($_GET["capitulo"])) {
+		$capitulo_selec = $_GET["capitulo"];
 		$curso_selec = "";
+	}else{
+		$curso_selec = "";
+		$capitulo_selec = "";
 	}
-	*/
+
+	
 ?>
 <?php include("includes/header.php");?>
 			<table id="estructura">
@@ -38,7 +42,10 @@
 					</ul>
 					</td> 
 					<td id="pagina"></br> 
-					
+						<?php
+							echo $curso_selec;
+							echo $capitulo_selec;
+						?>
 						
 					</td>					
 				</tr>
