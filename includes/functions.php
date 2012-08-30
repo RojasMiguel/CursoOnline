@@ -25,7 +25,7 @@
 	}
 	function obtener_curso_por_id($curso_id){
 		global $conexion;
-		$consulta = 'SELECT * FROM cursos WHERE id =' . $curos_id;
+		$consulta = 'SELECT * FROM curso WHERE id =' . $curso_id . ' LIMIT 1';
 		$respuesta = mysql_query($consulta,$conexion);
 		verificar_consulta($respuesta);
 		if($curso = mysql_fetch_array($respuesta)){
@@ -35,5 +35,6 @@
 		}
 		
 	}
+
 
 ?>

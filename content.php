@@ -5,7 +5,7 @@
 	if(isset($_GET["curso"])){
 		$curso_selec = $_GET["curso"];
 		$capitulo_selec = "";
-		//$cursoreg = obtener_curso_por_id($curso_selec);
+		$curso_reg = obtener_curso_por_id($curso_selec);
 	}elseif(isset($_GET["capitulo"])) {
 		$capitulo_selec = $_GET["capitulo"];
 		$curso_selec = "";
@@ -51,7 +51,7 @@
 					</td> 
 					<td id="pagina"></br> 
 						<?php
-							echo $curso_selec;
+							echo $curso_reg["nombre"];
 							echo $capitulo_selec;
 						?>
 						
