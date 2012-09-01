@@ -35,6 +35,17 @@
 		}
 		
 	}
+	function obtener_capitulo_por_id($capitulos_id){
+		global $conexion;
+		$consulta = 'SELECT * FROM capitulos WHERE id=' . $capitulos_id . ' LIMIT 1';
+		$respuesta = mysql_query($consulta,$conexion);
+		verificar_consulta($respuesta);
+		if($capitulos = mysql_fetch_array($respuesta)){
+			return $capitulos;
+		}else{
+			return NULL;
+		}
 
+	}
 
 ?>

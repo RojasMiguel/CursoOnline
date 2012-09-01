@@ -3,15 +3,14 @@
 <?php
 	
 	if(isset($_GET["curso"])){
-		$curso_selec = $_GET["curso"];
-		$capitulo_selec = "";
-		$curso_reg = obtener_curso_por_id($curso_selec);
+		$curso_reg = obtener_curso_por_id($_GET["curso"]);
+		$capitulo_reg = NULL;
 	}elseif(isset($_GET["capitulo"])) {
-		$capitulo_selec = $_GET["capitulo"];
-		$curso_selec = "";
+		$capitulo_reg = obtener_capitulo_por_id($_GET["capitulo"]);
+		$curso_reg = NULL;
 	}else{
-		$curso_selec = "";
-		$capitulo_selec = "";
+		$capitulo_reg = NULL;
+		$curso_reg = NULL;
 	}
 
 	
@@ -29,7 +28,7 @@
 
 							while($curso = mysql_fetch_array($cursos)){
 								echo "<li";
-								if($curso["id"] == $curso_selec){
+								if($curso["id"] == $curso_reg["id"]){
 									echo " class=\"selected\"";
 								}	
 								echo "> <a href=\"content.php?curso=" . urlencode($curso["id"]) ."\">" . $curso['nombre'] . "</a></li><ul class='capitulos'>";
@@ -39,7 +38,7 @@
 								while($capitulo = mysql_fetch_array($capitulos)){
 									
 									echo"<li";
-									if($capitulo["id"] == $capitulo_selec){
+									if($capitulo["id"] == $capitulo_reg["id"]){
 										echo" class=\"selected\"";
 									}	
 									echo "> <a href=\"content.php?capitulo=" . urlencode($capitulo["id"]) . "\">" . $capitulo["nombre"] . "</a></li>";								
@@ -51,8 +50,15 @@
 					</td> 
 					<td id="pagina"></br> 
 						<?php
-							echo $curso_reg["nombre"];
-							echo $capitulo_selec;
+							if(!is_null($curso_reg)){ ?>
+							<h2><?php echo $curso_reg["nombre"]; ?></h2>
+							<?php }elseif(!is_null($capitulo_reg)){?>
+							<h2><?php	echo $capitulo_reg["nombre"];?> </h2>
+							<div id="pagina-contenido">
+								<?php echo $capitulo_reg["contenido"];?>
+							</div>	
+							<?php
+							}
 						?>
 						
 					</td>					

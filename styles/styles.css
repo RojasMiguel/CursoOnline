@@ -56,8 +56,8 @@ h2{
 	margin: 2px;
 	padding: 2em;
 	text-align: center;
-	background: #13708F;
-	color: #8DC6D9;
+	background: #13708F; /* Azul */
+	color: #8DC6D9; 
 }
 #menu{
 	width: 150px;
@@ -80,3 +80,15 @@ ul.capitulos {
 .selected{
 	font-weight: bold;
 } 
+#pagina {
+	padding-left: 2em;
+	vertical-align: top;
+	background: #F6DC9C;
+}
+#pagina h2{
+	color: #E6A917;
+	margin-top: 1em;
+}
+#pagina h3{
+	color: #8D0D19;
+}
