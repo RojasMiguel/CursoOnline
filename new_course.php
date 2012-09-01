@@ -5,9 +5,7 @@
 			<table id="estructura">
 				<tr>
 					<td id="menu">
-						<?php  echo menu($curso_reg,$capitulo_reg); ?>
-						</br>
-						<a href="new_course.php"> Agregar un nuevo curso </a>
+						<?php echo menu($curso_reg, $capitulo_reg); ?>
 					</td> 
 					<td id="pagina"></br> 
 						<?php
