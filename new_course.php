@@ -8,21 +8,27 @@
 						<?php echo menu($curso_reg, $capitulo_reg); ?>
 					</td> 
 					<td id="pagina"></br> 
-						<?php
-							if(!is_null($curso_reg)){ ?>
-							<h2><?php echo $curso_reg["nombre"]; ?></h2>
-							<?php }elseif(!is_null($capitulo_reg)){?>
-							<h2><?php	echo $capitulo_reg["nombre"];?> </h2>
-							<div id="pagina-contenido">
-								<?php echo $capitulo_reg["contenido"];?>
-							</div>	
-							<?php
-							}else{
-								?>
-								<h2>Seleciona algún curso o capítulo</h2>
-							<?php	
-							} 
-						?>
+						<h2> Agregar Un Nuevo Curso </h2>
+					<form action="crate_course.php" method="post">
+						<p>Nombre de Curso: <input name="nombre"/> </p>
+						<p> Posición:
+							<SELECT name="Posicion">
+								<?php
+									$todos_los_cursos = obtener_curso();
+									$num_cursos = mysql_num_rows($todos_los_cursos);
+									for($i=1;$i<=$num_cursos+1;$i++) {
+										echo "<OPTION value=\"{$i}\"> {$i} </OPTION>";
+									}
+								?>	
+							</SELECT>
+						</p>
+						<p> Visibilidad:
+							<input type="radio" name="visibilidad" value="0">0</input>
+							<input type="radio" name="visibilidad" value="1">1</input> 
+						</p>
+						<input type="submit" value="Agregar Curso"/>
+					</form>
+						<a href = "content.php">Cancelar</a>
 						
 					</td>					
 				</tr>
